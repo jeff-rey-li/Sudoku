@@ -1,2 +1,6 @@
 # Sudoku
-A sudoku game that utilizes Backtracking
+This is a sudoku game that is played in a GUI utilizes the Backtracking Algorithm to solve unfinished sudokus. The game includes a total of 24 sudoku puzzles, ranging from three different difficulties. Users can also create their own sudoku puzzles and check if they are solvable (However, make sure to not create a puzzle that has multiple solutions).
+## How to Play
+To start the game, run Game.java. You will be prompted to select a difficulty. After selecting a difficulty, a random board of that difficulty will pop up. To put a number in a box, click on the box and then input the number you woud like to put in the box. This will just put a number in the box without confirming whether it is correct or not. You can keep this number as a note for yourself, or you can check whether the number is correct by pressing enter. If the number is incorrect, you will get a strike. Three strikes and you lose the game.
+## How to Create Your Own Board
+To create your own board, run BoardGenerator.java. An empty board will display for you to input numbers at your will. When you are done inputting numbers, you can press enter to print the board as a 2D array into the console, or you can press enter for the program to solve your board (the original board will still be printed to console). If you are satisfied with your board, you can copy the 2D array into StartBoard.java and try to solve the board yourself. Remember to make sure your board only has one solution when you put your board into the game.
