@@ -8,6 +8,9 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+/**
+ * Generates the 2D array of ints to use for the game
+ */
 public class BoardGenerator {
 
     private static JButton[][] buttons = new JButton[9][9];
@@ -73,50 +76,50 @@ public class BoardGenerator {
                     @Override
                     public void keyPressed(KeyEvent e) {
                         switch (e.getKeyCode()) {
-                            case 10:
+                            case 10: // Enter
                                 board.printBoard();
                                 return;
-                            case 32:
+                            case 32: // Space
                                 board.printBoard();
                                 solveBoard(board);
                                 return;
-                            case 48:
+                            case 48: // 0
                                 buttons[row][col].setText("");
                                 board.setNumber(row, col, 0);
                                 return;
-                            case 49:
+                            case 49: // 1
                                 buttons[row][col].setText("1");
                                 board.setNumber(row, col, 1);
                                 return;
-                            case 50:
+                            case 50: // 2
                                 buttons[row][col].setText("2");
                                 board.setNumber(row, col, 2);
                                 return;
-                            case 51:
+                            case 51: // 3
                                 buttons[row][col].setText("3");
                                 board.setNumber(row, col, 3);
                                 return;
-                            case 52:
+                            case 52: // 4
                                 buttons[row][col].setText("4");
                                 board.setNumber(row, col, 4);
                                 return;
-                            case 53:
+                            case 53: // 5
                                 buttons[row][col].setText("5");
                                 board.setNumber(row, col, 5);
                                 return;
-                            case 54:
+                            case 54: // 6
                                 buttons[row][col].setText("6");
                                 board.setNumber(row, col, 6);
                                 return;
-                            case 55:
+                            case 55: // 7
                                 buttons[row][col].setText("7");
                                 board.setNumber(row, col, 7);
                                 return;
-                            case 56:
+                            case 56: // 8
                                 buttons[row][col].setText("8");
                                 board.setNumber(row, col, 8);
                                 return;
-                            case 57:
+                            case 57: // 9
                                 buttons[row][col].setText("9");
                                 board.setNumber(row, col, 9);
                                 return;
