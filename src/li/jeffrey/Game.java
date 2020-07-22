@@ -16,7 +16,7 @@ public class Game {
     private static JLabel errorThree = new JLabel("");
     private static Difficulty difficulty;
 
-    public static void solveBoard(Board board) {
+    private static void solveBoard(Board board) {
         board.solve();
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
@@ -85,7 +85,6 @@ public class Game {
                 String text;
                 buttons[i][j].setBackground(Color.WHITE);
                 if (num != 0) {
-//                    buttons[i][j].setBackground(Color.LIGHT_GRAY);
                     buttons[i][j].setFont(new Font("Arial", Font.BOLD, 40));
                     text = Integer.toString(num);
                 } else {
@@ -109,8 +108,6 @@ public class Game {
                         if (e.getKeyChar() == ' ') {
                             timer.cancel();
                             solveBoard(board);
-//                            board.solve();
-//                            buttons[row][col].setText(Integer.toString(board.getNumber(row, col)));
                         }
                         if (!buttons[row][col].getText().equals("") && !buttons[row][col].getBackground().equals(Color.RED)
                                 && !buttons[row][col].getForeground().equals(Color.LIGHT_GRAY)) {
