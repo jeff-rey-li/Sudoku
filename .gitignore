@@ -1,1 +1,3 @@
-/Sudoku.iml
+*.iml
+/.idea
+/out
