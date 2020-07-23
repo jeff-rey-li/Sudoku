@@ -15,6 +15,7 @@ public class Game {
     private static JLabel errorTwo = new JLabel("");
     private static JLabel errorThree = new JLabel("");
     private static Difficulty difficulty;
+    private static boolean gameOver = false;
 
     private static void solveBoard(Board board) {
         board.solve();
@@ -106,7 +107,11 @@ public class Game {
                     @Override
                     public void keyPressed(KeyEvent e) {
                         if (e.getKeyChar() == ' ') {
-                            timer.cancel();
+                            if (!gameOver) {
+                                gameOver = !gameOver;
+                                timer.cancel();
+                                frame.setTitle(frame.getTitle() + " - You Lost");
+                            }
                             solveBoard(board);
                         }
                         if (!buttons[row][col].getText().equals("") && !buttons[row][col].getBackground().equals(Color.RED)
@@ -156,6 +161,18 @@ public class Game {
                                 buttons[row][col].setForeground(Color.BLACK);
                                 if (solvedBoard.getNumber(row, col) == 1) {
                                     board.setNumber(row, col, 1);
+                                    for (int k = 0; k < 9; k++) {
+                                        for (int l = 0; l < 9; l++) {
+                                            if (buttons[k][l].getText().equals("") || buttons[k][l].getForeground().equals(Color.LIGHT_GRAY)) {
+                                                return;
+                                            }
+                                        }
+                                    }
+                                    if (!gameOver) {
+                                        gameOver = !gameOver;
+                                        timer.cancel();
+                                        frame.setTitle(frame.getTitle() + " - You Win!");
+                                    }
                                 } else {
                                     buttons[row][col].setBackground(Color.RED);
                                     numCount++;
@@ -164,7 +181,9 @@ public class Game {
                                     } else if (numCount == 2) {
                                         errorTwo.setText(" X");
                                     } else if (numCount == 3) {
+                                        gameOver = !gameOver;
                                         timer.cancel();
+                                        frame.setTitle(frame.getTitle() + " - You Lost");
                                         errorThree.setText(" X");
                                         for (int k = 0; k < 9; k++) {
                                             for (int l = 0; l < 9; l++) {
@@ -185,6 +204,18 @@ public class Game {
                                 buttons[row][col].setForeground(Color.BLACK);
                                 if (solvedBoard.getNumber(row, col) == 2) {
                                     board.setNumber(row, col, 2);
+                                    for (int k = 0; k < 9; k++) {
+                                        for (int l = 0; l < 9; l++) {
+                                            if (buttons[k][l].getText().equals("") || buttons[k][l].getForeground().equals(Color.LIGHT_GRAY)) {
+                                                return;
+                                            }
+                                        }
+                                    }
+                                    if (!gameOver) {
+                                        gameOver = !gameOver;
+                                        timer.cancel();
+                                        frame.setTitle(frame.getTitle() + " - You Win!");
+                                    }
                                 } else {
                                     buttons[row][col].setBackground(Color.RED);
                                     numCount++;
@@ -193,7 +224,9 @@ public class Game {
                                     } else if (numCount == 2) {
                                         errorTwo.setText(" X");
                                     } else if (numCount == 3) {
+                                        gameOver = !gameOver;
                                         timer.cancel();
+                                        frame.setTitle(frame.getTitle() + " - You Lost");
                                         errorThree.setText(" X");
                                         for (int k = 0; k < 9; k++) {
                                             for (int l = 0; l < 9; l++) {
@@ -214,6 +247,18 @@ public class Game {
                                 buttons[row][col].setForeground(Color.BLACK);
                                 if (solvedBoard.getNumber(row, col) == 3) {
                                     board.setNumber(row, col, 3);
+                                    for (int k = 0; k < 9; k++) {
+                                        for (int l = 0; l < 9; l++) {
+                                            if (buttons[k][l].getText().equals("") || buttons[k][l].getForeground().equals(Color.LIGHT_GRAY)) {
+                                                return;
+                                            }
+                                        }
+                                    }
+                                    if (!gameOver) {
+                                        gameOver = !gameOver;
+                                        timer.cancel();
+                                        frame.setTitle(frame.getTitle() + " - You Win!");
+                                    }
                                 } else {
                                     buttons[row][col].setBackground(Color.RED);
                                     numCount++;
@@ -222,7 +267,9 @@ public class Game {
                                     } else if (numCount == 2) {
                                         errorTwo.setText(" X");
                                     } else if (numCount == 3) {
+                                        gameOver = !gameOver;
                                         timer.cancel();
+                                        frame.setTitle(frame.getTitle() + " - You Lost");
                                         errorThree.setText(" X");
                                         for (int k = 0; k < 9; k++) {
                                             for (int l = 0; l < 9; l++) {
@@ -243,6 +290,18 @@ public class Game {
                                 buttons[row][col].setForeground(Color.BLACK);
                                 if (solvedBoard.getNumber(row, col) == 4) {
                                     board.setNumber(row, col, 4);
+                                    for (int k = 0; k < 9; k++) {
+                                        for (int l = 0; l < 9; l++) {
+                                            if (buttons[k][l].getText().equals("") || buttons[k][l].getForeground().equals(Color.LIGHT_GRAY)) {
+                                                return;
+                                            }
+                                        }
+                                    }
+                                    if (!gameOver) {
+                                        gameOver = !gameOver;
+                                        timer.cancel();
+                                        frame.setTitle(frame.getTitle() + " - You Win!");
+                                    }
                                 } else {
                                     buttons[row][col].setBackground(Color.RED);
                                     numCount++;
@@ -251,7 +310,9 @@ public class Game {
                                     } else if (numCount == 2) {
                                         errorTwo.setText(" X");
                                     } else if (numCount == 3) {
+                                        gameOver = !gameOver;
                                         timer.cancel();
+                                        frame.setTitle(frame.getTitle() + " - You Lost");
                                         errorThree.setText(" X");
                                         for (int k = 0; k < 9; k++) {
                                             for (int l = 0; l < 9; l++) {
@@ -272,6 +333,18 @@ public class Game {
                                 buttons[row][col].setForeground(Color.BLACK);
                                 if (solvedBoard.getNumber(row, col) == 5) {
                                     board.setNumber(row, col, 5);
+                                    for (int k = 0; k < 9; k++) {
+                                        for (int l = 0; l < 9; l++) {
+                                            if (buttons[k][l].getText().equals("") || buttons[k][l].getForeground().equals(Color.LIGHT_GRAY)) {
+                                                return;
+                                            }
+                                        }
+                                    }
+                                    if (!gameOver) {
+                                        gameOver = !gameOver;
+                                        timer.cancel();
+                                        frame.setTitle(frame.getTitle() + " - You Win!");
+                                    }
                                 } else {
                                     buttons[row][col].setBackground(Color.RED);
                                     numCount++;
@@ -280,7 +353,9 @@ public class Game {
                                     } else if (numCount == 2) {
                                         errorTwo.setText(" X");
                                     } else if (numCount == 3) {
+                                        gameOver = !gameOver;
                                         timer.cancel();
+                                        frame.setTitle(frame.getTitle() + " - You Lost");
                                         errorThree.setText(" X");
                                         for (int k = 0; k < 9; k++) {
                                             for (int l = 0; l < 9; l++) {
@@ -301,6 +376,18 @@ public class Game {
                                 buttons[row][col].setForeground(Color.BLACK);
                                 if (solvedBoard.getNumber(row, col) == 6) {
                                     board.setNumber(row, col, 6);
+                                    for (int k = 0; k < 9; k++) {
+                                        for (int l = 0; l < 9; l++) {
+                                            if (buttons[k][l].getText().equals("") || buttons[k][l].getForeground().equals(Color.LIGHT_GRAY)) {
+                                                return;
+                                            }
+                                        }
+                                    }
+                                    if (!gameOver) {
+                                        gameOver = !gameOver;
+                                        timer.cancel();
+                                        frame.setTitle(frame.getTitle() + " - You Win!");
+                                    }
                                 } else {
                                     buttons[row][col].setBackground(Color.RED);
                                     numCount++;
@@ -309,7 +396,9 @@ public class Game {
                                     } else if (numCount == 2) {
                                         errorTwo.setText(" X");
                                     } else if (numCount == 3) {
+                                        gameOver = !gameOver;
                                         timer.cancel();
+                                        frame.setTitle(frame.getTitle() + " - You Lost");
                                         errorThree.setText(" X");
                                         for (int k = 0; k < 9; k++) {
                                             for (int l = 0; l < 9; l++) {
@@ -330,6 +419,18 @@ public class Game {
                                 buttons[row][col].setForeground(Color.BLACK);
                                 if (solvedBoard.getNumber(row, col) == 7) {
                                     board.setNumber(row, col, 7);
+                                    for (int k = 0; k < 9; k++) {
+                                        for (int l = 0; l < 9; l++) {
+                                            if (buttons[k][l].getText().equals("") || buttons[k][l].getForeground().equals(Color.LIGHT_GRAY)) {
+                                                return;
+                                            }
+                                        }
+                                    }
+                                    if (!gameOver) {
+                                        gameOver = !gameOver;
+                                        timer.cancel();
+                                        frame.setTitle(frame.getTitle() + " - You Win!");
+                                    }
                                 } else {
                                     buttons[row][col].setBackground(Color.RED);
                                     numCount++;
@@ -338,7 +439,9 @@ public class Game {
                                     } else if (numCount == 2) {
                                         errorTwo.setText(" X");
                                     } else if (numCount == 3) {
+                                        gameOver = !gameOver;
                                         timer.cancel();
+                                        frame.setTitle(frame.getTitle() + " - You Lost");
                                         errorThree.setText(" X");
                                         for (int k = 0; k < 9; k++) {
                                             for (int l = 0; l < 9; l++) {
@@ -359,6 +462,18 @@ public class Game {
                                 buttons[row][col].setForeground(Color.BLACK);
                                 if (solvedBoard.getNumber(row, col) == 8) {
                                     board.setNumber(row, col, 8);
+                                    for (int k = 0; k < 9; k++) {
+                                        for (int l = 0; l < 9; l++) {
+                                            if (buttons[k][l].getText().equals("") || buttons[k][l].getForeground().equals(Color.LIGHT_GRAY)) {
+                                                return;
+                                            }
+                                        }
+                                    }
+                                    if (!gameOver) {
+                                        gameOver = !gameOver;
+                                        timer.cancel();
+                                        frame.setTitle(frame.getTitle() + " - You Win!");
+                                    }
                                 } else {
                                     buttons[row][col].setBackground(Color.RED);
                                     numCount++;
@@ -367,7 +482,9 @@ public class Game {
                                     } else if (numCount == 2) {
                                         errorTwo.setText(" X");
                                     } else if (numCount == 3) {
+                                        gameOver = !gameOver;
                                         timer.cancel();
+                                        frame.setTitle(frame.getTitle() + " - You Lost");
                                         errorThree.setText(" X");
                                         for (int k = 0; k < 9; k++) {
                                             for (int l = 0; l < 9; l++) {
@@ -388,6 +505,18 @@ public class Game {
                                 buttons[row][col].setForeground(Color.BLACK);
                                 if (solvedBoard.getNumber(row, col) == 9) {
                                     board.setNumber(row, col, 9);
+                                    for (int k = 0; k < 9; k++) {
+                                        for (int l = 0; l < 9; l++) {
+                                            if (buttons[k][l].getText().equals("") || buttons[k][l].getForeground().equals(Color.LIGHT_GRAY)) {
+                                                return;
+                                            }
+                                        }
+                                    }
+                                    if (!gameOver) {
+                                        gameOver = !gameOver;
+                                        timer.cancel();
+                                        frame.setTitle(frame.getTitle() + " - You Win!");
+                                    }
                                 } else {
                                     buttons[row][col].setBackground(Color.RED);
                                     numCount++;
@@ -396,7 +525,9 @@ public class Game {
                                     } else if (numCount == 2) {
                                         errorTwo.setText(" X");
                                     } else if (numCount == 3) {
+                                        gameOver = !gameOver;
                                         timer.cancel();
+                                        frame.setTitle(frame.getTitle() + " - You Lost");
                                         errorThree.setText(" X");
                                         for (int k = 0; k < 9; k++) {
                                             for (int l = 0; l < 9; l++) {
